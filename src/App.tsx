@@ -7,6 +7,10 @@ function App() {
     if (ref.current) ref.current.focus();
   });
 
+  useEffect(() => {
+    document.title = "My App";
+  });
+
   return (
     <>
       <input ref={ref} type="text" className="form-control" />
