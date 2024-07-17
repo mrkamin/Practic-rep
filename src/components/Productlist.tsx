@@ -6,7 +6,7 @@ const Productlist = () => {
   useEffect(() => {
     console.log(product);
     setProduct(["Hosehold", "Clouting"]);
-  });
+  }, []);
   return <div>Productlist</div>;
 };
 
