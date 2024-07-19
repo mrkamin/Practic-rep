@@ -4,9 +4,10 @@ const Productlist = () => {
   const [product, setProduct] = useState<string[]>([]);
 
   useEffect(() => {
-    console.log(product);
     setProduct(["Hosehold", "Clouting"]);
+    console.log(product);
   }, []);
+
   return <div>Productlist</div>;
 };
 

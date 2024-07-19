@@ -15,6 +15,11 @@ function App() {
   return (
     <>
       <div className="mb-5">
+        <select className="form-select">
+          <option value=""></option>
+          <option value="Clouthing">Clouthing</option>
+          <option value="Household">Household</option>
+        </select>
         <Productlist />
       </div>
       <input ref={ref} type="text" className="form-control" />
