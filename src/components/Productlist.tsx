@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-const Productlist = () => {
+const Productlist = ({ category }: { category: string }) => {
   const [product, setProduct] = useState<string[]>([]);
 
   useEffect(() => {
+    console.log(product, category);
     setProduct(["Hosehold", "Clouting"]);
-    console.log(product);
-  }, []);
+  }, [category]);
 
-  return <div>Productlist</div>;
+  return <div>{category}</div>;
 };
 
 export default Productlist;
