@@ -37,7 +37,8 @@ function App() {
         <ul className="list-group">
           {users.map((user) => (
             <li key={user.id} className="list-item">
-              {user.name}
+              {user.name}{" "}
+              <button className="btn btn-outline-danger">Delete</button>
             </li>
           ))}
         </ul>
