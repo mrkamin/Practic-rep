@@ -41,10 +41,17 @@ function App() {
         setUsers(originalUsers);
       });
   };
+  const addUser = () => {
+    const newUser = { id: 0, name: "Rafi" };
+    setUsers([newUser, ...users]);
+  };
   return (
     <div>
       {error && <p className="text-danger">{error}</p>}
       {isLoding && <div className="spinner-border"></div>}
+      <button className="btn btn-primary" onClick={addUser}>
+        Add
+      </button>
       <div className="mb-5 p-3">
         <ul className="list-group">
           {users.map((user) => (
