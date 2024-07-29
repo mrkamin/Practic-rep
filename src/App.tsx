@@ -68,12 +68,15 @@ function App() {
               className="list-group-item d-flex justify-content-between"
             >
               {user.name}{" "}
-              <button
-                className="btn btn-outline-danger"
-                onClick={() => onDeleteUser(user)}
-              >
-                Delete
-              </button>
+              <div className="d-flex">
+                <button className="btn btn-outline-secondary mx-1">Update</button>
+                <button
+                  className="btn btn-outline-danger"
+                  onClick={() => onDeleteUser(user)}
+                >
+                  Delete
+                </button>
+              </div>
             </li>
           ))}
         </ul>
