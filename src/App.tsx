@@ -41,6 +41,10 @@ function App() {
         setUsers(originalUsers);
       });
   };
+  const onUpdatedUser = (user: User) => {
+    const updatedUser = { ...user, name: user.name + "!" };
+    setUsers(users.map(u => u.id === user.id ? updatedUser: u))
+  };
   const addUser = () => {
     const originalUsers = [...users];
     const newUser = { id: 0, name: "Rafi" };
@@ -69,7 +73,12 @@ function App() {
             >
               {user.name}{" "}
               <div className="d-flex">
-                <button className="btn btn-outline-secondary mx-1">Update</button>
+                <button
+                  className="btn btn-outline-secondary mx-1"
+                  onClick={() => onUpdatedUser(user)}
+                >
+                  Update
+                </button>
                 <button
                   className="btn btn-outline-danger"
                   onClick={() => onDeleteUser(user)}
