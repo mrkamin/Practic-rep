@@ -42,8 +42,18 @@ function App() {
       });
   };
   const onUpdatedUser = (user: User) => {
+    const originalUser = [...users];
     const updatedUser = { ...user, name: user.name + "!" };
-    setUsers(users.map(u => u.id === user.id ? updatedUser: u))
+    setUsers(users.map((u) => (u.id === user.id ? updatedUser : u)));
+    axios
+      .patch(
+        "https://jsonplaceholder.typicode.com/users/" + user.id,
+        updatedUser
+      )
+      .catch((err) => {
+        setError(err.message);
+        setUsers(originalUser);
+      });
   };
   const addUser = () => {
     const originalUsers = [...users];
